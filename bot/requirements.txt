@@ -1,0 +1,4 @@
+nonebot==1.9.1
+jieba==0.42.1
+gino==1.0.1
+Pillow==9.0
