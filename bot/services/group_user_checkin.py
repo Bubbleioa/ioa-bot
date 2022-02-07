@@ -27,7 +27,7 @@ def _create_user_check_b64img(user_name: str, user: GroupUser) -> str:
     # 图像的参数是凭感觉来的
     # TODO: we have a lot of byte copies. we have to optimise them.
     bg_dir = f'{RESOURCES_DIR}/超天酱.jpg'
-    font_dir = f'{RESOURCES_DIR}/SourceHanSerifSC-VF.otf'
+    font_dir = f'{RESOURCES_DIR}/LXGWWenKai-Regular.ttf'
 
     left = Image.open(bg_dir)
     left = left.crop(random.choice((

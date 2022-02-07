@@ -1,5 +1,5 @@
 from aiocache import cached
-from .common import fetch_text 
+from .common import fetch_text
 
 @cached(ttl=60)
 async def get_current_weather_short(city: str) -> str:

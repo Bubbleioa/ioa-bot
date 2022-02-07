@@ -1,7 +1,6 @@
-from ast import arg
-from distutils import command
-from unittest import result
-from jinja2 import is_undefined
+'''
+weather plugin
+'''
 from nonebot import IntentCommand, NLPSession, on_natural_language
 from nonebot.command import CommandSession
 from nonebot.plugin import on_command
@@ -27,14 +26,14 @@ async def _(session: NLPSession):
 @on_command('weather',aliases=('天气', '气温'))
 async def _(session: CommandSession):
     args = session.current_arg_text.strip().split(' ', 1)
-    if (not args[0]):
+    if not args[0]:
         city = await session.aget(key='city',prompt=f'请问是哪做城市呢？{SELFNAME}会过来找 你 哦w', at_sender=True)
     else : city = args[0]
     is_detailed = (len(args)==2 and args[1]=='详细') or session.state.get('is_detailed')
     try:
         func = get_current_weather_desc if is_detailed else get_current_weather_short
         result = await func(city)
-    except ServiceException as e:
-        result = e.message
+    except ServiceException as error:
+        result = error.message
 
     await session.send(result)

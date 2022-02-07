@@ -3,3 +3,4 @@ gocqhttp/data
 gocqhttp/device.json
 gocqhttp/session.token
 __pycache__
+.vscode

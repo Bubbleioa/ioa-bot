@@ -1,6 +1,6 @@
+from os import path
 import nonebot
 import config
-from os import path
 from services import db_context
 
 if __name__ == '__main__':

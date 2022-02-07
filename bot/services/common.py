@@ -1,9 +1,13 @@
-from curses.ascii import HT
-from aiocqhttp import HttpFailed
+'''
+make http request
+'''
 from httpx import AsyncClient, HTTPError
 from .log import logger
 
 class ServiceException(Exception):
+    '''
+    handle exception
+    '''
     def __init__(self, message: str) -> None:
         super().__init__(message)
 
@@ -16,7 +20,7 @@ async def fetch_text(uri: str) -> str:
         try:
             res = await client.get(uri)
             res.raise_for_status()
-        except HTTPError as e:
-            logger.exception(e)
+        except HTTPError as error:
+            logger.exception(error)
             raise ServiceException('API 服务目前无法使用')
         return res.text

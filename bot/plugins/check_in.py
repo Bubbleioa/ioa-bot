@@ -1,10 +1,10 @@
-from nonebot.command import CommandSession
-from nonebot.plugin import on_command
+'''
+check in plugin
+'''
 from aiocqhttp.message import MessageSegment
-from sqlalchemy import alias, true
-from nonebot import get_bot
+from nonebot import get_bot, CommandSession, on_command
 
-from services.group_user_checkin import group_user_check_in, group_user_check, group_user_check_use_b64img
+from services.group_user_checkin import group_user_check_in, group_user_check_use_b64img
 
 __plugin_name__ = '签到'
 __plugin_usage__ = (

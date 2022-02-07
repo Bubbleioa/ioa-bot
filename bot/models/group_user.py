@@ -1,9 +1,14 @@
+'''
+The model of users that in a QQ group
+'''
+# pylint: disable=no-member
+# gino has no ... member
 from datetime import datetime
-
-from sqlalchemy import null
 from services.db_context import db
 
 class GroupUser(db.Model):
+    '''The model of users that in a QQ group'''
+
     __tablename__ = 'group_users'
 
     id = db.Column(db.Integer(), primary_key=True)
@@ -18,6 +23,10 @@ class GroupUser(db.Model):
 
     @classmethod
     async def ensure(cls, user_qq: int, belonging_group: int, for_update: bool = False) -> 'GroupUser':
+        '''
+        ensure user exists
+        '''
+
         query = cls.query.where(
             (cls.user_qq==user_qq) & (cls.belonging_group == belonging_group)
         )
