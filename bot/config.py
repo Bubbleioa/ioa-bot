@@ -1,6 +1,5 @@
 import logging
 import os
-from nonebot.default_config import *
 
 SUPERUSERS = {1342130847}
 COMMAND_START = {"/", ""}
