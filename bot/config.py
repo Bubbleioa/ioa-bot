@@ -1,5 +1,3 @@
-from asyncio.log import logger
-from datetime import timedelta
 import logging
 import os
 from nonebot.default_config import *
