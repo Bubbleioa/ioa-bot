@@ -2,3 +2,5 @@ nonebot==1.9.1
 jieba==0.42.1
 gino==1.0.1
 Pillow==9.0
+wordcloud==1.8.1
+pytz==2021.3
