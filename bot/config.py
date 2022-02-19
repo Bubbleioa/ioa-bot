@@ -12,4 +12,3 @@ DEBUG = True
 RESOURCES_DIR = "resources"
 DATABASE_URI = os.environ["DATABASE_URI"]
 LOGGING_LEVEL = logging.INFO
-COMMAND_SEP = {"."}
