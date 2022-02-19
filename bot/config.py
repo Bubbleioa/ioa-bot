@@ -1,5 +1,6 @@
 import logging
 import os
+from nonebot.default_config import *
 
 SUPERUSERS = {1342130847}
 COMMAND_START = {"/", ""}
@@ -11,3 +12,4 @@ DEBUG = True
 RESOURCES_DIR = "resources"
 DATABASE_URI = os.environ["DATABASE_URI"]
 LOGGING_LEVEL = logging.INFO
+COMMAND_SEP = {"."}
